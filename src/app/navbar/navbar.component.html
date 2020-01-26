@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-warning">
+    <a class="navbar-brand text-dark" href="#">E-Rider</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link text-dark" routerLink="/home" >Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" routerLink="/vehiclelist">Vehicle List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" routerLink="/vehicle" *ngIf="checkLogin()">Register Vehicle</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" routerLink="/booking">Booking</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" routerLink="/contact">Contact Us</a>
+        </li>
+        
+       
+       
+      </ul>
+      <div class="spacer"></div> 
+      <a class="nav-link text-dark" routerLink="/registrationform" *ngIf="!checkLogin()">Register</a>  
+      <a class="nav-link text-dark" routerLink="/loginform" *ngIf="!checkLogin()" >Login</a> 
+      <a class="nav-link text-dark" routerLink="/loginform" *ngIf="checkLogin()" (click)="logout()" >Logout</a>
+    </div>
+  </nav>
